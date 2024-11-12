@@ -1,0 +1,356 @@
+/* -------- Global Styles -------- */
+:root {
+  --primary-bg-color: #4CAF50;
+  --secondary-bg-color: #e8e8e8;
+  --highlight-color: #9ddfd3;
+  --alert-color: #ea2c62;
+  --main-font: Arial, sans-serif;
+  --text-color: #333;
+  --background-color: #f4f4f4;
+  --link-hover-color: #45a049;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--main-font);
+  line-height: 1.6;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  scroll-behavior: smooth;
+}
+
+/* -------- Home Section Styles -------- */
+.home-section {
+  text-align: center;
+  padding: 20px;
+  background-color: #fff;
+  margin-bottom: 20px;
+}
+
+.marquee {
+  background: var(--primary-bg-color);
+  color: white;
+  padding: 10px 0;
+  font-weight: bold;
+  animation: marquee 10s linear infinite;
+}
+
+@keyframes marquee {
+  0% { transform: translate(100%, 0); }
+  100% { transform: translate(-100%, 0); }
+}
+
+.home-image {
+  max-width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+
+.home-title {
+  font-size: 2em;
+  margin: 10px 0;
+}
+
+.home-description {
+  font-size: 1.1em;
+  margin: 10px 0;
+}
+
+.cta-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: var(--primary-bg-color);
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.cta-button:hover {
+  background-color: var(--link-hover-color);
+}
+
+/* -------- About Page Styles -------- */
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto 20px;
+}
+
+.instructions {
+  list-style-type: disc;
+  padding-left: 20px;
+  margin: 20px 0;
+}
+
+.instructions li {
+  margin-bottom: 10px;
+}
+
+a {
+  display: inline-block;
+  margin-top: 20px;
+  color: var(--primary-bg-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* -------- Responsive Styles -------- */
+@media (max-width: 600px) {
+  .home-title {
+    font-size: 1.5em;
+  }
+
+  .home-description {
+    font-size: 1em;
+  }
+
+  .cta-button {
+    padding: 8px 15px;
+  }
+}
+
+/* -------- Game Interface Styles -------- */
+body.game-page {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+main {
+  height: 500px;
+  width: 1000px;
+}
+
+/* Player and scoreboard displays below */
+.player-one-display,
+.player-two-display {
+  width: 200px;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--secondary-bg-color);
+  text-align: center;
+}
+
+.player-one-display {
+  border: 5px solid var(--highlight-color);
+}
+
+.player-two-display {
+  border: 5px solid var(--alert-color);
+}
+
+#scoreboard {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 100vw;
+  height: 125px;
+  margin-bottom: 75px;
+}
+
+#scoreboard-one, #scoreboard-two {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+
+#scoreboard-one {
+  border: 5px solid var(--highlight-color);
+}
+
+#scoreboard-two {
+  border: 5px solid var(--alert-color);
+}
+
+#scoreboard-one > p, #scoreboard-two > p {
+  font-size: 2.5em;
+}
+
+/* Game board styles */
+.board {
+  width: 1000px;
+  height: 500px;
+  background-color: #825959;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  padding: 0 3%;
+  width: 70%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.side-one, .side-two {
+  width: 100%;
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  border-style: solid;
+}
+
+.side-one {
+  border-color: var(--highlight-color);
+}
+
+.side-two {
+  border-color: var(--alert-color);
+  margin-top: 70px;
+}
+
+/* Pocket styling */
+.side-one > div, .side-two > div {
+  width: 15%;
+  height: 100%;
+  background-color: #a07676;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  cursor: pointer;
+}
+
+/* Piece display below */
+.piece-display-one, .piece-display-two {
+  width: 100%;
+  height: 13%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.piece-display-one {
+  margin-bottom: 25px;
+}
+
+.piece-display-two {
+  margin-top: 25px;
+}
+
+.piece-display-one > div, .piece-display-two > div {
+  width: 15%;
+  height: 100%;
+  border: 2px solid #a07676;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+  color: #f1ae89;
+}
+
+/* Pieces inside pockets */
+.piece {
+  height: 15px;
+  width: 15px;
+  margin: 2.5px;
+  border-radius: 100%;
+  background-color: yellow;
+}
+
+.mancala-one, .mancala-two {
+  margin: 0 2.5%;
+  width: 10%;
+  height: 65%;
+  border: 1px solid black;
+  background-color: #a07676;
+  border-radius: 25%;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.mancala-one {
+  border: 3px solid var(--highlight-color);
+}
+
+.mancala-two {
+  border: 3px solid var(--alert-color);
+}
+
+/* Winner message and buttons */
+.winnerContainerDiv {
+  margin: 50px;
+}
+
+.playAgainDivs {
+  font-size: 2em;
+  padding: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid black;
+}
+
+#vet-button {
+  margin-top: 10px;
+  border-style: solid;
+  padding: 7px;
+  font-size: 1.3em;
+}
+
+a.game-link {
+  font-size: 1.5em;
+  margin-top: 10px;
+}
+
+/* -------- Responsive Styles for Game Interface -------- */
+@media (max-width: 1000px) {
+  body.game-page {
+    height: 1300px;
+    overflow: visible;
+  }
+
+  main {
+    transform: rotate(90deg);
+  }
+
+  .winnerContainerDiv {
+    position: absolute;
+    top: 385px;
+    width: 500px;
+    opacity: 90%;
+  }
+
+  #scoreboard {
+    flex-direction: column;
+    height: auto;
+    margin-bottom: 250px;
+  }
+
+  #scoreboard > div {
+    width: 500px;
+  }
+
+  #scoreboard-one, #scoreboard-two {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
